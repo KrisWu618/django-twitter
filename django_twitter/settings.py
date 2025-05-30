@@ -25,7 +25,7 @@ SECRET_KEY = '*8o(&4n_wm_aqw@@ys5(l=ez&c9-c1wr5=059xym!93_!t1%0+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.33.10', 'localhost']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'django_twitter.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'twitter',
+        'HOST': 'mysql8',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': '123456',    # 这里是自己下载mysql时候输入两次的那个密码
     }
 }
 
